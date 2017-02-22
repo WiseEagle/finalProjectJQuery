@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+https://wireframe.cc/LdChV0
+https://wireframe.cc/5oIu1h
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="js/script.js" type="text/javascript"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+        <div id="block"></div>
+            <!--register/login-->
+            <div id="loginBlock">
+                <a href="login">Login</a><a href="register">Register</a> 
+                <div id="register">
+                    <form id="regForm">
+                        <input type="text" id="name" placeholder="Enter login">
+                        <input type="password" id="password" placeholder="Enter password">
+                        <input type="submit">
+                    </form>
+                </div>
+                <div id="login">
+                    <form id="logForm">
+                        <input type="text" id="name" placeholder="Admin">
+                        <input type="password" id="password" placeholder="Admin">
+                        <input type="submit">
+                    </form>
+                </div>
+            </div>
+            <!--end register/login-->
+            <header>
+
+                <!--chat-->
+                <div id="chatBox" class="hiddenBox">
+                    <div id="chatMessages" class="hiddenBoxElements">
+
+                    </div>
+                  <input type="text" id="chatInput" class="hiddenBoxElements" placeholder="Input message here">
+                  <a href="#">Toggle chat</a>
+                </div> 
+                <!--end chat-->
+            <!--Motivation slider-->
+
+                <div id="slider">
+                    <span id="prev"></span>
+                    <div id="slides">
+
+                        <img src="images/image1.jpg" alt=""/>
+                        <img src="images/image2.jpg" alt=""/>
+                        <img src="images/image3.jpg" alt=""/>
+
+                    </div>
+                     <span id="next"></span>
+                </div>
+           </header> 
+        
+        <!--end motivation slider-->
+        
+        <!--controls-->
+        <div id="controls">
+            <ul>
+                <li><a id="addTask" href="#">Add task</a></li>
+                <li><a id="cancelAddTask" href="#">Cancel</a></li>
+                <li><a id="tasks" href="#">Tasks</a></li>
+            </ul>
+            
+            
+        </div>
+        <!--End controls-->
+        <div class="wrapper">
+            <!--Isotope sorter-->
+            <div id="isotopeSorter">
+                <div class="bg-primary" id="control-panel">
+                    <a rel="develop" class="btn btn-default" href="">Разработка</a>
+                    <a rel="promot" class="btn btn-default" href="">Продвижение</a>
+                    <a rel="design" class="btn btn-default" href="">Дизайн</a>
+                    <a rel="mobile" class="btn btn-default" href="">Мобильная версия</a>
+                </div>
+                <div id="control-panel2">
+                    <a rel="all" class="btn btn-default all" href="">Все</a>
+                    <a rel="lite" class="btn btn-default lite" href="">Визитка</a>
+                    <a rel="sell" class="btn btn-default sell" href="">Магазин</a>
+                    <a rel="hard" class="btn btn-default hard" href="">Корпоративный</a>
+                </div>
+                <div id="cards" class="develop cards">
+                    <div class="all lite" data-block-id="1"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3000</span><p class="hideOption">Разработка - Сайт визитка</p></div>
+                    <div class="all sell" data-block-id="2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">5000</span><p class="hideOption">Разработка - Интернет магазин до 2000 товаров</p></div>
+                    <div class="all hard" data-block-id="3"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7500</span><p class="hideOption">Разработка - Корпоративный сайт</p></div>
+                    <div class="all hard" data-block-id="4"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7500</span><p class="hideOption">Разработка - Корпоративный сайт(CRM)</p></div>
+                    <div class="all lite" data-block-id="5"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3000</span><p class="hideOption">Разработка - Landing page</p></div>
+                    <div class="all sell" data-block-id="6"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">7000</span><p class="hideOption">Разработка - Интернет магазин более 2000 товаров</p></div>
+                    <div class="all hard" data-block-id="7"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7500</span><p class="hideOption">Разработка - Корпоративный сайт</p></div>
+                    <div class="all sell lite" data-block-id="8"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="price">4000</span><p class="hideOption">Разработка - Landing page (продающий)</p></div>
+                </div>
+                <div id="cards2" class="promot cards">
+                    <div class="all lite" data-block-id="1"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3001</span></div>
+                    <div class="all sell" data-block-id="2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">5001</span></div>
+                    <div class="all hard" data-block-id="3"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7501</span></div>
+                    <div class="all hard" data-block-id="4"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7501</span></div>
+                    <div class="all lite" data-block-id="5"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3001</span></div>
+                    <div class="all sell" data-block-id="6"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">7001</span></div>
+                    <div class="all hard" data-block-id="7"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7501</span></div>
+                    <div class="all sell lite" data-block-id="8"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="price">4001</span></div>
+                </div>
+                <div id="cards3" class="design cards">
+                    <div class="all lite" data-block-id="1"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3002</span></div>
+                    <div class="all sell" data-block-id="2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">5002</span></div>
+                    <div class="all hard" data-block-id="3"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7502</span></div>
+                    <div class="all hard" data-block-id="4"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7502</span></div>
+                    <div class="all lite" data-block-id="5"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3002</span></div>
+                    <div class="all sell" data-block-id="6"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">7002</span></div>
+                    <div class="all hard" data-block-id="7"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7502</span></div>
+                    <div class="all sell lite" data-block-id="8"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="price">4002</span></div>
+                </div>
+                <div id="cards4" class="mobile cards">
+                    <div class="all lite" data-block-id="1"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3003</span></div>
+                    <div class="all sell" data-block-id="2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">5003</span></div>
+                    <div class="all hard" data-block-id="3"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7503</span></div>
+                    <div class="all hard" data-block-id="4"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7503</span></div>
+                    <div class="all lite" data-block-id="5"><i class="fa fa-leaf" aria-hidden="true"></i><span class="price">3003</span></div>
+                    <div class="all sell" data-block-id="6"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="price">7003</span></div>
+                    <div class="all hard" data-block-id="7"><i class="fa fa-sitemap" aria-hidden="true"></i><span class="price">7503</span></div>
+                    <div class="all sell lite" data-block-id="8"><i class="fa fa-shopping-basket" aria-hidden="true"></i><span class="price">4003</span></div>
+                </div>
+                <div id="task"><div id="total"><h3>Total:</h3><span id="totalPrice"></span></div><a href="#" id="add">Add</a></div>
+                <div class="wrap">
+                    <a href="#">x</a>
+                    <div class="popup item1">
+                        <h2>Сайт Визитка</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3>Преимущества данного пакета:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3>В пакет входит:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="popup item2"><h2>Интернет магазин до 2000 товаров</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    <div class="popup item3"><h2>Корпоративный сайт</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    <div class="popup item4"><h2>Корпоративный сайт</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    <div class="popup item5"><h2>Landing page</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    <div class="popup item6"><h2>Интернет магазин более 2000 товаров</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    <div class="popup item7"><h2>Корпоративный сайт</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                    <div class="popup item8"><h2>Продающий Landing page</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+                </div>
+            </div>
+            <!--End isotope sorter-->
+            <!--Tasks-->
+            <div id="tasksBlock">
+                
+            </div>
+            <!--End tasks-->
+        </div>
+        <!--Users block-->
+        <div id="users">
+            <h2>Our team</h2>
+            <div class="anyUser">
+                <div class="uname"></div>
+                <div class="userPerm"></div>
+            </div>
+        </div>
+        <!--End users block-->
+        
+    </body>
+</html>
