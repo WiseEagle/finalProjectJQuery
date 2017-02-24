@@ -62,7 +62,7 @@ $(document).ready(function(){
         $("#chatMessages").html(JSON.parse(localStorage.getItem("chatMessages")));
         $("#chatMessages p span").each(function(){
             if($(this).data("user")===localStorage.getItem("logined")){
-                $(this).parent().addClass("activeUser")
+                $(this).parent().addClass("activeUser");
             }
         });
     }
@@ -72,7 +72,7 @@ $(document).ready(function(){
             localStorage.setItem("chatMessages",JSON.stringify(JSON.parse(localStorage.getItem("chatMessages"))+"<p><span data-user=\""+localStorage.getItem("logined")+"\">"+localStorage.getItem("logined")+":</span>"+$(this).val()+"</p>"));
             $("#chatMessages p span").each(function(){
                 if($(this).data("user")===localStorage.getItem("logined")){
-                    $(this).parent().addClass("activeUser")
+                    $(this).parent().addClass("activeUser");
                 }
             });
         }
