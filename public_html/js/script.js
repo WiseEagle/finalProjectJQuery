@@ -60,12 +60,24 @@ $(document).ready(function(){
 $(document).ready(function(){
     if(localStorage.getItem("chatMessages")){
         $("#chatMessages").html(JSON.parse(localStorage.getItem("chatMessages")));
+        $("#chatMessages p span").each(function(){
+            if($(this).data("user")===localStorage.getItem("logined")){
+                $(this).parent().addClass("activeUser")
+            }
+        });
     }
     $("#chatInput").on("keypress", function(e){
 	if(e.charCode==13){
-            $("#chatMessages").html($("#chatMessages").html()+"<p>"+$(this).val()+"</p>");
-            localStorage.setItem("chatMessages",JSON.stringify($("#chatMessages").html()));
+            $("#chatMessages").html($("#chatMessages").html()+"<p><span data-user=\""+localStorage.getItem("logined")+"\">"+localStorage.getItem("logined")+":</span>"+$(this).val()+"</p>");
+            localStorage.setItem("chatMessages",JSON.stringify(JSON.parse(localStorage.getItem("chatMessages"))+"<p><span data-user=\""+localStorage.getItem("logined")+"\">"+localStorage.getItem("logined")+":</span>"+$(this).val()+"</p>"));
+            $("#chatMessages p span").each(function(){
+                if($(this).data("user")===localStorage.getItem("logined")){
+                    $(this).parent().addClass("activeUser")
+                }
+            });
         }
+        
+        
     });
     $("#chatBox a").on("click",function(){
         if($("#chatBox").css('top')=="40px"){$("#chatBox").animate({top:"-188px"}, 1000);}

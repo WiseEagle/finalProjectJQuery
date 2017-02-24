@@ -104,6 +104,9 @@ input[type="text"] {
     background: none !important;
     border: none;
 }
+.activeUser {
+    text-align: right;
+}
 /****************End chatbox*****************/
 /***************Slider**********************/
 #slider {
