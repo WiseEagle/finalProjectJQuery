@@ -13,8 +13,26 @@ $(document).ready(function(){
         if (hours < 10) hours = "0" + hours;
         if (minutes < 10) minutes = "0" + minutes;
         if (seconds < 10) seconds = "0" + seconds;
-        $("#block").html(hours + ":" + minutes + ":" + seconds);
+        $("#block").html(hours + ":" + minutes + ":" + seconds+"<br/><span class='weather'>\n\
+            temperature: "+parseInt((weather.results.channel.item.condition.temp-32)/1.8)+"°C \n\
+            humidity:"+weather.results.channel.atmosphere.humidity+"%\
+            wind:"+parseInt(weather.results.channel.wind.speed*0.44704)+"м/с</span>");
     }
+    var weather;
+    function getWeather(){
+        
+        $.ajax({
+            url:"https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22kyiv%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
+            dataType:"json", 
+        }).done(function(data){
+            weather = data.query; 
+            //console.log("temperature: "+(weather.results.channel.item.condition.temp-32)/1.8);
+            // console.log("humidity:"+weather.results.channel.atmosphere.humidity);
+            //console.log("wind:"+(weather.results.channel.wind.speed*0.44704));
+        });
+    }
+    getWeather();
+    var weth = setInterval(function(){getWeather()},3600000);
     var bsi = setInterval(function(){digitalWatch()},1000); 
     var blockTimer;
     $("#block").on("click",function(){
@@ -22,12 +40,14 @@ $(document).ready(function(){
         blockTimer = setInterval(function(){blockTimers();
         },1000);
         clearInterval(bsi);
+        clearInterval(weth);
     });
     function blockTimers(){
         if(timer==60){
             $("#block").slideDown("slow");
             clearInterval(blockTimer);
-            setInterval(function(){digitalWatch()},1000);
+            bsi = setInterval(function(){digitalWatch()},1000);
+            weth = setInterval(function(){getWeather()},3600000);
         }
         timer++;
     }

@@ -400,6 +400,11 @@ a#cancelAddTask {
     padding-top: 450px;
     padding-left: 10%;
 }
+.weather {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
 /*end blocked screen*/
 header {
     border-bottom: 1px solid #ccc;
