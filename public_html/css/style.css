@@ -378,6 +378,9 @@ a#cancelAddTask {
 }
 /***********************end controls***************************************/
 /*************************task block**************************************/
+.taskEaxamplePBL{
+    display:none;
+}
 #tasksBlock{
     border: 1px solid #ddd;
     width: 100%;
@@ -386,11 +389,20 @@ a#cancelAddTask {
     margin: 5px;
     padding: 10px;
 }
+ul.pBackLog {
+    border: 1px solid #dddddd;
+}
+ul.pBackLog li {
+    border: 2px solid #97a2ec;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+}
 /**************************end task block*********************************/
 /*blocked screen*/
 #block {
     font-size: 72px;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;

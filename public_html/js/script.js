@@ -19,6 +19,7 @@ $(document).ready(function(){
             wind:"+parseInt(weather.results.channel.wind.speed*0.44704)+"м/с</span>");
     }
     var weather;
+    var photo;
     function getWeather(){
         
         $.ajax({
@@ -26,9 +27,15 @@ $(document).ready(function(){
             dataType:"json", 
         }).done(function(data){
             weather = data.query; 
-            //console.log("temperature: "+(weather.results.channel.item.condition.temp-32)/1.8);
-            // console.log("humidity:"+weather.results.channel.atmosphere.humidity);
-            //console.log("wind:"+(weather.results.channel.wind.speed*0.44704));
+            $.ajax({
+                url:"https://pixabay.com/api/?key=4659039-516258049045ec3b1232a8917&q="+weather.results.channel.item.condition.text.replace(/\s/ig, '+')+"&image_type=photo",
+                dataType:"json", 
+            }).done(function(data){
+                photo = data; 
+                $("#block").css({background:"url("+photo.hits[0 + Math.floor(Math.random() * (photo.hits.length + 1 - 0))].webformatURL+")",backgroundSize:"100%"});
+            });
+            
+
         });
     }
     getWeather();
@@ -65,7 +72,7 @@ $(document).ready(function(){
         user = (JSON.parse(localStorage.getItem("Users1")));//!!!!
         perm = (JSON.parse(localStorage.getItem("UserPermisions")));
         $.each(user, function(index, val){
-            var usrBlock = $(".anyUser").clone().appendTo("#users").fadeIn("slow");
+            var usrBlock = $(".anyUser:first").clone().appendTo("#users").fadeIn("slow");
             usrBlock.find(".uname").append(val);
             usrBlock.find(".userPerm").append(perm[val]);
         
@@ -316,5 +323,44 @@ $(document).ready(function(){
 /*tasks*/
 $(document).ready(function(){
     $("#tasks").on("click",function(){$("#tasksBlock").slideToggle(1000);return false;});
+    
+    var tasksCount = localStorage.getItem("tasksCount")|| 1;
+    var task;
+    //.taskEaxamplePBL
+    //#tasksBlog
+    task = (JSON.parse(localStorage.getItem("tasks")));
+    //console.log(task);
+    var counter = 1;
+    
+    $.each(task, function(key, value){
+        var taskItem = $(".taskEaxamplePBL:first-child").clone().appendTo("#tasksBlock").fadeIn("slow");
+        taskItem.find("h2").append(" "+key);
+        taskItem.find("ul").append(value);
+    });
+       
+    $("#add").on("click", function(){
+        /**/
+        if(tasksCount==1){
+            localStorage.setItem("tasksCount", 1);
+        }
+        //#task .cartItem
+        var taskInner;
+        $("#task .cartItem").each(function(){
+            taskInner += "<li>"+$(this).html()+"</li>";
+        });
+        if(!(localStorage.getItem("tasks"))){
+            
+            task = "{\"item"+tasksCount+"\":"+JSON.stringify(taskInner)+"}";
+            localStorage.setItem("tasksCount", ++tasksCount);
+            localStorage.setItem("tasks", task);
+            
+        }else{
+            task = (JSON.parse(localStorage.getItem("tasks")));
+            task["item"+tasksCount]=taskInner;
+            localStorage.setItem("tasks", JSON.stringify(task));
+            localStorage.setItem("tasksCount", ++tasksCount);
+        }
+        $("#task .cartItem").remove();
+    });
 });
 /*End tasks*/
