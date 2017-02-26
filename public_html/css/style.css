@@ -64,6 +64,7 @@ and open the template in the editor.
     width: 50%;
     background: #628484;
     top:-188px;
+    z-index: 9998;
 }
 #chatMessages {
     overflow: auto;
@@ -111,10 +112,11 @@ input[type="text"] {
 /***************Slider**********************/
 #slider {
     position: absolute;
-    right: 10px;
+    right: 0px;
     overflow: hidden;
     width: 400px;
     border: 1px solid black;
+    z-index: 999;
 }
 #slides {
     position: relative;
@@ -133,11 +135,6 @@ input[type="text"] {
     height: 30px;
     width: 10px;
     z-index: 10;
-}
-#prev:before {
-    content: "\f053";
-    font-family: fontawesome;
-    font-size: 28px;
 }
 #prev:before {
     content: "\f053";
@@ -328,6 +325,8 @@ a#cancelAddTask {
     border: 1px solid #dddddd;
     min-height: 200px;
     margin: 5px;
+    top: 0;
+    left: 0;
 }
 #total {
     padding: 10px;
@@ -348,6 +347,8 @@ a#cancelAddTask {
     min-height: 100px;
     padding: 10px;
     margin: 5px;
+    top: 0;
+    right: 0;
 }
 .anyUser {
     display: none;
@@ -376,10 +377,23 @@ a#cancelAddTask {
     list-style: none;
     text-align: center;
 }
+#tasks {
+    background: #007fff;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px;
+    
+}
+
 /***********************end controls***************************************/
 /*************************task block**************************************/
 .taskEaxamplePBL{
     display:none;
+}
+.taskEaxamplePBL h2 {
+    display: inline-block;
 }
 #tasksBlock{
     border: 1px solid #ddd;
@@ -390,9 +404,12 @@ a#cancelAddTask {
     padding: 10px;
 }
 ul.pBackLog {
+    background: #eeeeee;
     border: 1px solid #dddddd;
+    padding:10px;
 }
 ul.pBackLog li {
+    background: #ffffff;
     border: 2px solid #97a2ec;
     display: inline-block;
     text-align: center;
@@ -411,6 +428,7 @@ ul.pBackLog li {
     color: white;
     padding-top: 450px;
     padding-left: 10%;
+    z-index:9999;
 }
 .weather {
     font-size: 20px;

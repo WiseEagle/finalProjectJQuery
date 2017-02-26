@@ -177,7 +177,8 @@ $(document).ready(function(){
 });
 /*********************End chat**********************************/
 /***********************slider**********************************/
-$(document).ready(function(){
+                    /*rewrited in plugin*/
+/*$(document).ready(function(){
     var width = 0; $("#slides img").each(function(){width = width +  $(this).width();});$("#slides").width(width);
     var height = $("#slides img").height(); $("#slider").height(height); $("body > header").height($("#slides img").height());
     var myVar = setInterval(function(){ next(); }, 3000);
@@ -212,7 +213,7 @@ $(document).ready(function(){
     $("#prev").on("click", function(){
         prev();clearInterval(myVar);
     });
-});
+});*/
 /**************************end slider**************************/
 /*isotope sorter*/
 function choose(selector){
@@ -320,30 +321,25 @@ $(document).ready(function(){
     /**/
 });
 /*end isotope sorter*/
-/*tasks*/
+/**********************************tasks***************************************/
 $(document).ready(function(){
     $("#tasks").on("click",function(){$("#tasksBlock").slideToggle(1000);return false;});
     
     var tasksCount = localStorage.getItem("tasksCount")|| 1;
     var task;
-    //.taskEaxamplePBL
-    //#tasksBlog
     task = (JSON.parse(localStorage.getItem("tasks")));
-    //console.log(task);
     var counter = 1;
     
     $.each(task, function(key, value){
         var taskItem = $(".taskEaxamplePBL:first-child").clone().appendTo("#tasksBlock").fadeIn("slow");
         taskItem.find("h2").append(" "+key);
         taskItem.find("ul").append(value);
-    });
-       
+        taskItem.attr('id', key);
+    });  
     $("#add").on("click", function(){
-        /**/
         if(tasksCount==1){
             localStorage.setItem("tasksCount", 1);
         }
-        //#task .cartItem
         var taskInner;
         $("#task .cartItem").each(function(){
             taskInner += "<li>"+$(this).html()+"</li>";
@@ -362,5 +358,12 @@ $(document).ready(function(){
         }
         $("#task .cartItem").remove();
     });
+    $(".checkImportant").on("change",function(){
+        if($(this).prop( "checked")){
+            $(this).parent().parent().css('background',"red");
+        }else{
+            $(this).parent().parent().css('background',"#eeeeee");
+        }
+    });
 });
-/*End tasks*/
+/****************************End tasks*****************************************/

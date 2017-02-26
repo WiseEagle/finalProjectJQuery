@@ -7,13 +7,16 @@ https://wireframe.cc/5oIu1h
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
         <script src="js/script.js" type="text/javascript"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/mobile.css" rel="stylesheet" type="text/css"/>
         <script src="js/jquery-ui.min.js" type="text/javascript"></script>
         <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery.slider.js" type="text/javascript"></script>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
     </head>
     <body>
@@ -61,6 +64,12 @@ https://wireframe.cc/5oIu1h
                     </div>
                      <span id="next"></span>
                 </div>
+            <script>
+                if($(window).width()<747){
+                    $("#slider").makeSlider($(window).width());$("header").height($("#slider").height());
+                }
+            
+            </script>
            </header> 
         
         <!--end motivation slider-->
@@ -154,7 +163,12 @@ https://wireframe.cc/5oIu1h
             <!--End isotope sorter-->
             <!--Tasks-->
             <div id="tasksBlock">
-                <div class="taskEaxamplePBL"><h2>Product backlog</h2><ul class="pBackLog"></ul></div>
+                <div class="taskEaxamplePBL">
+                    <h2>Product backlog</h2>
+                    <label><input type="checkbox" class="checkImportant" value="first_checkbox">an important</label>
+                    <label><input type="checkbox" class="checkDone" value="first_checkbox">Done</label>
+                    <ul class="pBackLog"></ul>
+                </div>
                 
             </div>
             <!--End tasks-->

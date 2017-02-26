@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26.02.2017, 16:41:39
+    Author     : nkt
+*/
+@media (max-width:767px){
+    #block{
+        font-size: 48px;
+        padding-top: 300px;
+        background-size: auto 100% !important;
+    } 
+    #chatBox {
+        width: 100%;
+    }
+    #controls {
+        margin:0;
+        padding:0px;
+        width: 100%;
+        height: inherit;
+        min-height: inherit;
+        float: none;
+    }
+    #users {
+        width: 100%;
+        border: 1px solid #ddd;
+        float: none;
+        min-height: inherit;
+        padding: 0px;
+        margin: 0px;
+    }
+    div#tasksBlock {
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .wrapper {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+}
