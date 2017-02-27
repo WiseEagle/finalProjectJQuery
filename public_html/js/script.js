@@ -16,7 +16,8 @@ $(document).ready(function(){
         $("#block").html(hours + ":" + minutes + ":" + seconds+"<br/><span class='weather'>\n\
             temperature: "+parseInt((weather.results.channel.item.condition.temp-32)/1.8)+"°C \n\
             humidity:"+weather.results.channel.atmosphere.humidity+"%\
-            wind:"+parseInt(weather.results.channel.wind.speed*0.44704)+"м/с</span>");
+            wind:"+parseInt(weather.results.channel.wind.speed*0.44704)+"м/с</span>\n\
+            <span class='center'>Press to unlock</span>");
     }
     var weather;
     var photo;

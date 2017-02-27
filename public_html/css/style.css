@@ -417,6 +417,16 @@ ul.pBackLog li {
 }
 /**************************end task block*********************************/
 /*blocked screen*/
+.center {
+    position: fixed;
+    top: 200px;
+    left: 100px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 28px;
+    color: #dddddd;
+}
 #block {
     font-size: 72px;
     position: fixed;
